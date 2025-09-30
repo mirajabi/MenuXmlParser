@@ -1,62 +1,103 @@
 # MenuXmlParser
 
-یک پارسر XML منو برای اندروید که قابلیت خواندن، نمایش و ویرایش منوهای پویا را دارد.
+An Android XML menu parser with dynamic menu reading, display, and editing capabilities.
 
-## ویژگی‌ها
+## Features
 
-- **پارس XML**: خواندن فایل XML منو از assets با Jackson
-- **نمایش سلسله‌مراتبی**: نمایش گروه‌ها، منوهای سطح بالا، اپراتورها و مقادیر شارژ
-- **UI دوگانه**: پیاده‌سازی کامل در Kotlin و Java
-- **ذخیره‌سازی محلی**: امکان ویرایش و ذخیره تغییرات در حافظه داخلی
-- **معماری Clean**: جدایی Domain، Data و Presentation
-- **RecyclerView**: نمایش لیست‌های بهینه با آداپترهای سفارشی
+- **XML Parsing**: Read menu XML files from assets using Jackson
+- **Hierarchical Display**: Show menu groups, top-level menus, operators, and charge amounts
+- **Dual UI Implementation**: Complete implementation in both Kotlin and Java
+- **Local Storage**: Edit and save menu modifications to internal storage
+- **Clean Architecture**: Separation of Domain, Data, and Presentation layers
+- **RecyclerView Navigation**: Optimized list display with custom adapters
+- **Dynamic Menu Structure**: Support for complex nested menu hierarchies
+- **Charge System**: Specialized UI for mobile operators and charge amounts
 
-## ساختار پروژه
+## Project Structure
 
 ### Kotlin Implementation
 ```
 com.miaadrajabi.menuxmlparser/
 ├── domain/
-│   ├── model/          # مدل‌های دامین
-│   └── usecase/        # MenuEditor
+│   ├── model/          # Domain models
+│   └── usecase/        # MenuEditor use case
 ├── data/
-│   ├── xml/           # مدل‌های XML و کانفیگ
-│   ├── mapper/        # مپرهای XML-Domain
-│   ├── source/        # Assets و Local data sources
+│   ├── xml/           # XML models and configuration
+│   ├── mapper/        # XML-Domain mappers
+│   ├── source/        # Assets and Local data sources
 │   └── repository/    # MenuRepository
 └── presentation/
-    └── menu/          # ViewModel، Activity، Adapters
+    └── menu/          # ViewModel, Activity, Adapters
 ```
 
 ### Java Implementation
 ```
 com.miaadrajabi.menuxmlparser.java/
 ├── domain/
-│   ├── model/         # مدل‌های دامین جاوا
-│   └── usecase/       # MenuEditor جاوا
+│   ├── model/         # Java domain models
+│   └── usecase/       # Java MenuEditor
 ├── data/
-│   ├── xml/          # مدل‌های XML جاوا
-│   ├── mapper/       # مپرهای XML-Domain جاوا
-│   ├── source/       # Data sources جاوا
-│   └── repository/   # MenuRepository جاوا
+│   ├── xml/          # Java XML models
+│   ├── mapper/       # Java XML-Domain mappers
+│   ├── source/       # Java data sources
+│   └── repository/   # Java MenuRepository
 └── presentation/
-    └── menu/         # ViewModel، Activity، Adapters جاوا
+    └── menu/         # Java ViewModel, Activity, Adapters
 ```
 
-## استفاده
+## Architecture
 
-1. اپ را اجرا کنید
-2. بین UI کاتلین و جاوا انتخاب کنید
-3. روی گروه‌های منو کلیک کنید تا منوهای زیرمجموعه باز شوند
-4. برای شارژ: اپراتور انتخاب کنید و مقادیر شارژ را مشاهده کنید
+The project follows **Clean Architecture** principles:
 
-## وابستگی‌ها
+- **Domain Layer**: Business logic and entities
+- **Data Layer**: Data sources, repositories, and mappers
+- **Presentation Layer**: UI components, ViewModels, and adapters
 
-- Jackson XML: پارس فایل‌های XML
-- RecyclerView: نمایش لیست‌ها
-- Material3: UI components
-- ViewModel & LiveData: مدیریت state
+## Usage
 
-## لایسنس
+1. Launch the app
+2. Choose between Kotlin UI or Java UI
+3. Navigate through menu groups by tapping on items
+4. For charge menus: Select an operator to view available charge amounts
+5. Tap on charge amounts to get detailed service information
 
-این پروژه تحت لایسنس MIT منتشر شده است.
+## UI Navigation Flow
+
+1. **Root Level**: Display menu groups (Sale, Balance, Bill Payment, Sim Charge, etc.)
+2. **Group Level**: Show top-level menus within selected group
+3. **Operator Level**: For charge menus, display horizontal operator chips (IRMCI, Irancell, Rightel, etc.)
+4. **Amount Level**: Show vertical list of available charge amounts
+
+## XML Structure Support
+
+The parser supports complex XML structures including:
+- Menu groups with multiple top-level menus
+- Nested menu items with operators
+- Service descriptors with charge amounts
+- USSD commands and provider information
+- Enable/disable states for menu items
+
+## Dependencies
+
+- **Jackson XML**: XML parsing and object mapping
+- **RecyclerView**: Efficient list display
+- **Material3**: Modern UI components
+- **ViewModel & LiveData**: State management
+- **ConstraintLayout**: Flexible UI layouts
+
+## Building
+
+1. Clone the repository
+2. Open in Android Studio
+3. Sync Gradle dependencies
+4. Build and run on Android device/emulator
+
+## Requirements
+
+- Android API 21+
+- JDK 17
+- Android Gradle Plugin 8.7.2
+
+## License
+
+This project is released under the MIT License.
