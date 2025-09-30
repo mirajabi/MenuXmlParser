@@ -1,0 +1,108 @@
+<DynamicMenus>
+    <MenuGroup class="sale" en="Sale" enable="true" fn="خرید" id="01">
+        <TopLevelMenu en="Sale" enable="true" fn="خريد" icon="sale_icon" id="11">
+            <ServiceDescriptor id="111" service="Sale" serviceAmount="variable" />
+        </TopLevelMenu>
+    </MenuGroup>
+    <MenuGroup class="balance" en="Balance" enable="true" fn="موجودي" id="c">
+        <TopLevelMenu en="Balance" enable="true" fn="موجودي" icon="balance_icon" id="c1">
+            <ServiceDescriptor id="c11" service="Balance" serviceAmount="1440" />
+        </TopLevelMenu>
+    </MenuGroup>
+    <MenuGroup class="bill_payment" en="Bill Payment" enable="true" fn="قبض" id="d">
+        <TopLevelMenu en="Bill Payment" enable="true" fn="قبض" icon="bill_icon" id="d1">
+            <ServiceDescriptor id="d11" service="BillPayment" />
+        </TopLevelMenu>
+    </MenuGroup>
+    <MenuGroup class="sim_charge" en="Sim Charge" enable="true" fn="شارژ سیمکارت" id="e">
+        <TopLevelMenu en="Charge" enable="true" expandable="false" fn="خرید شارژ" icon="charge_icon" id="e1">
+            <MenuItem class="normal_charge" en="Normal Charge" enable="true" fn="شارژ اعتباری" id="e11">
+                <MenuItem class="operator" en="IRMCI" enable="true" fn="همراه اول" id="e111" ussdGetSimCharge="*140*11#" ussdGetSimNum="*780*2*1#" usssdChargeCommand="*140*#">
+                    <MenuItem en="IRMCI" enable="true" fn="همراه اول" id="e1111">
+                        <ServiceDescriptor categoryId="01" hasCount="true" id="e11111" load="*140*#Pin#" providerId="0919" service="NormalCharge" serviceAmount="10000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="IRMCI" enable="true" fn="همراه اول" id="e1112">
+                        <ServiceDescriptor categoryId="02" hasCount="true" id="e11121" load="*140*#Pin#" providerId="0919" service="NormalCharge" serviceAmount="20000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="IRMCI" enable="true" fn="همراه اول" id="e1113">
+                        <ServiceDescriptor categoryId="03" hasCount="true" id="e11131" load="*140*#Pin#" providerId="0919" service="NormalCharge" serviceAmount="50000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="IRMCI" enable="true" fn="همراه اول" id="e1114">
+                        <ServiceDescriptor categoryId="04" hasCount="true" id="e11141" load="*140*#Pin#" providerId="0919" service="NormalCharge" serviceAmount="100000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="IRMCI" enable="true" fn="همراه اول" id="e1115">
+                        <ServiceDescriptor categoryId="05" hasCount="true" id="e11151" load="*140*#Pin#" providerId="0919" service="NormalCharge" serviceAmount="200000" support="02164004" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem class="operator" en="Irancell" enable="true" fn="ایرانسل" id="e112" ussdGetSimCharge="*141*1#" ussdGetSimNum="*780*2*1#" usssdChargeCommand="*141*">
+                    <MenuItem en="Irancell" enable="false" fn="ایرانسل" id="e1121">
+                        <ServiceDescriptor categoryId="01" hasCount="true" id="e11211" load="*141*Pin#" providerId="0935" service="NormalCharge" serviceAmount="10000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Irancell" enable="true" fn="ایرانسل" id="e1122">
+                        <ServiceDescriptor categoryId="02" hasCount="true" id="e11221" load="*141*Pin#" providerId="0935" service="NormalCharge" serviceAmount="20000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Irancell" enable="true" fn="ایرانسل" id="e1123">
+                        <ServiceDescriptor categoryId="03" hasCount="true" id="e11231" load="*141*Pin#" providerId="0935" service="NormalCharge" serviceAmount="50000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Irancell" enable="true" fn="ایرانسل" id="e1124">
+                        <ServiceDescriptor categoryId="04" hasCount="true" id="e11241" load="*141*Pin#" providerId="0935" service="NormalCharge" serviceAmount="100000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Irancell" enable="true" fn="ایرانسل" id="e1125">
+                        <ServiceDescriptor categoryId="05" hasCount="true" id="e11251" load="*141*Pin#" providerId="0935" service="NormalCharge" serviceAmount="200000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Irancell" enable="true" fn="ایرانسل" id="e1126">
+                        <ServiceDescriptor categoryId="10" hasCount="true" id="e11261" load="*141*Pin#" providerId="0935" service="NormalCharge" serviceAmount="500000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Irancell" enable="true" fn="ایرانسل" id="e1127">
+                        <ServiceDescriptor categoryId="11" hasCount="true" id="e11271" load="*141*Pin#" providerId="0935" service="NormalCharge" serviceAmount="1000000" support="02164004" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem class="operator" en="Rightel" enable="true" fn="رايتل" id="e113">
+                    <MenuItem en="Rightel" enable="true" fn="رايتل" id="e1131">
+                        <ServiceDescriptor categoryId="02" hasCount="true" id="e11311" load="*141*Pin#" providerId="0921" service="NormalCharge" serviceAmount="20000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Rightel" enable="true" fn="رايتل" id="e1132">
+                        <ServiceDescriptor categoryId="03" hasCount="true" id="e11321" load="*141*Pin#" providerId="0921" service="NormalCharge" serviceAmount="50000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Rightel" enable="true" fn="رايتل" id="e1133">
+                        <ServiceDescriptor categoryId="04" hasCount="true" id="e11331" load="*141*Pin#" providerId="0921" service="NormalCharge" serviceAmount="100000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Rightel" enable="true" fn="رايتل" id="e1134">
+                        <ServiceDescriptor categoryId="05" hasCount="true" id="e11341" load="*141*Pin#" providerId="0921" service="NormalCharge" serviceAmount="200000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Rightel" enable="true" fn="رايتل" id="e1135">
+                        <ServiceDescriptor categoryId="06" hasCount="true" id="e11351" load="*141*Pin#" providerId="0921" service="NormalCharge" serviceAmount="500000" support="02164004" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem class="operator" en="Talia" enable="false" fn="تالیا" id="e114">
+                    <MenuItem en="Talia" enable="true" fn="تالیا" id="e1141">
+                        <ServiceDescriptor categoryId="02" hasCount="true" id="e11411" load="*140*#Pin#" providerId="0932" service="NormalCharge" serviceAmount="20000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Talia" enable="true" fn="تالیا" id="e1142">
+                        <ServiceDescriptor categoryId="03" hasCount="true" id="e11421" load="*140*#Pin#" providerId="0932" service="NormalCharge" serviceAmount="50000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Talia" enable="true" fn="تالیا" id="e1143">
+                        <ServiceDescriptor categoryId="04" hasCount="true" id="e11431" load="*140*#Pin#" providerId="0932" service="NormalCharge" serviceAmount="100000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Talia" enable="true" fn="تالیا" id="e1144">
+                        <ServiceDescriptor categoryId="05" hasCount="true" id="e11441" load="*140*#Pin#" providerId="0932" service="NormalCharge" serviceAmount="200000" support="02164004" />
+                    </MenuItem>
+                    <MenuItem en="Talia" enable="true" fn="تالیا" id="e1145">
+                        <ServiceDescriptor categoryId="06" hasCount="true" id="e11451" load="*140*#Pin#" providerId="0932" service="NormalCharge" serviceAmount="500000" support="02164004" />
+                    </MenuItem>
+                </MenuItem>
+            </MenuItem>
+        </TopLevelMenu>
+    </MenuGroup>
+    <MenuGroup class="Barcode" en="Bill Inquery" enable="true" fn="پیگیری قبض" id="f">
+        <TopLevelMenu en="Barcode" enable="true" fn="بار کد" icon="icon_barcode" id="f1">
+            <ServiceDescriptor id="f11" service="Barcode" />
+        </TopLevelMenu>
+    </MenuGroup>
+    <MenuGroup class="identified_sale" en="Identified Sale" enable="true" fn="خرید شناسه دار" id="i">
+        <TopLevelMenu en="Identified Sale" enable="true" fn="خرید شناسه دار" icon="sale_icon" id="i1">
+            <ServiceDescriptor algorithmType="0" companyNameEn="" companyNameFa="" id="i11" service="IdentifiedSale" serviceAmount="variable" />
+        </TopLevelMenu>
+    </MenuGroup>
+</DynamicMenus>
+
